@@ -18,4 +18,8 @@ public class HelloController {
     public String  getHello() {
         return "hello----------";
     }
+    @GetMapping("/getHello1")
+    public String  getHello1() {
+        return "hello1----------";
+    }
 }
