@@ -1,0 +1,62 @@
+logging:
+  level:
+    root: info
+    com.example: debug
+  file: D:\\wxd\\work\\log.log
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  application:
+    ## 注册服务名
+    name: yn-admin-test
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8008
+        username: admin
+        password: admin
+        instance:
+          metadata:
+            # 这里配置admin-client的账号和密码
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+  security:
+    user:
+      name: wxd
+      password: 123456
+
+server:
+  port: 8103
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+
+easy-es:
+  enable: true # 默认为true,若为false时,则认为不启用本框架
+  address : 127.0.0.0:9200  #填你的es连接地址
+  # username: 有设置才填写,非必须
+  # password: 有设置才填写,非必须
