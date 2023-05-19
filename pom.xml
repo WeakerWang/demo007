@@ -69,13 +69,13 @@
             <artifactId>guava</artifactId>
             <version>19.0</version>
         </dependency>
-        <dependency>
+ <!--       <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.21</version>
             <scope>compile</scope>
         </dependency>
-        <!-- mybatis plus 代码生成器 -->
+        &lt;!&ndash; mybatis plus 代码生成器 &ndash;&gt;
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -86,12 +86,12 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.2.0</version>
         </dependency>
-
-        <dependency>
+-->
+      <!--  <dependency>
             <groupId>io.github.xpc1024</groupId>
             <artifactId>easy-es-boot-starter</artifactId>
             <version>0.9.6</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
